@@ -1,0 +1,2 @@
+1. INCREASING SPAWN SPEED OVER TIME
+Replaced the single timeBetweenSpawns field with two new ones: spawnRateMin and spawnRateMax, so the spawn delay is now picked randomly between those two values each time a sheep spawns. Added an Update() method that uses the existing timer variable to count seconds, and every 10 seconds it reduces both values by 0.2f, making sheep appear faster and faster over time. Mathf.Max() makes sure the values never drop below a safe minimum so the game stays playable.
